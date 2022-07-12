@@ -1,8 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.header{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr 1fr;
+  background-color: blue;
+
+
+}
+.left-header,
+ul{
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+    text-align: center;
 }
