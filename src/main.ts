@@ -132,7 +132,9 @@ if(item.discountedPrice===undefined){
     currentPriceEl.textContent=''
 }
 else { 
-currentPriceEl.textContent=`£${item.discountedPrice}`}
+currentPriceEl.textContent=`£${item.discountedPrice}`
+oldPriceEl.className='old-price'
+}
 
 
 productEl.append(productImgEl, productName, oldPriceEl, currentPriceEl)

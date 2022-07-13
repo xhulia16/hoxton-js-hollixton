@@ -59,3 +59,8 @@ padding:7px;
   color: rgb(180, 12, 12);
   font-weight: bold;
 }
+
+.old-price{
+  color: grey;
+  text-decoration: line-through;
+}
