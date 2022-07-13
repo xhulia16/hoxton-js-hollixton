@@ -52,5 +52,10 @@ padding:20px;
 }
 
 span{
-padding:10px;
+padding:7px;
+}
+
+.span-discount{
+  color: rgb(180, 12, 12);
+  font-weight: bold;
 }

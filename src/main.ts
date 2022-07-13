@@ -5,7 +5,7 @@ type: string,
 name: string,
 image: string,
 price: number,
-discountedPrice: number,
+discountedPrice: number| null,
 dateEntered: string,
 stock: number
 }
@@ -125,7 +125,9 @@ let oldPriceEl=document.createElement('span')
 oldPriceEl.textContent=`£${item.price}`
 
 let currentPriceEl=document.createElement('span')
-currentPriceEl.textContent='£ Current Price'
+currentPriceEl.className='span-discount'
+currentPriceEl.textContent=`£${item.discountedPrice}`
+
 
 productEl.append(productImgEl, productName, oldPriceEl, currentPriceEl)
 productDisplayEL.append(productEl)
