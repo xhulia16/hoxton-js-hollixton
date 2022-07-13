@@ -19,6 +19,13 @@ let state: State = {
     selectedItem: []
 }
 
+function addtoCart(){
+    let shoppingCartEL=document.createElement('form')
+    console.log('well sth is happening')
+
+}
+
+
 function getStoreItems() {
     fetch('http://localhost:3005/store')
         .then(resp => resp.json())
@@ -119,6 +126,9 @@ function renderItem() {
 
     let addToCartbtn = document.createElement('button')
     addToCartbtn.textContent = 'Add to Cart'
+    addToCartbtn.addEventListener('click', function(){
+        addtoCart()
+    })
 
     itemDetailsEl.append(itemNameEl, addToCartbtn)
     selectedItem.append(imgDivEl, itemDetailsEl)
