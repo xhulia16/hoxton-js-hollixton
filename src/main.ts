@@ -2,9 +2,7 @@ import './style.css'
 
 let state={}
 
-function render(){
 
-}
 
 function renderHeader(){
  //   <div class="left-header">
@@ -112,5 +110,9 @@ productDisplayEL.append(productEl)
 mainEl.append(mainTitleEl, productDisplayEL)
 }
 
-renderHeader()
-renderMain()
+function render(){
+    renderHeader()
+    renderMain()
+}
+
+render()
