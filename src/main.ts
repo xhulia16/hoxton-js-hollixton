@@ -1,4 +1,5 @@
 import './style.css'
+
 type Item={
 id: number, 
 type: string,
@@ -124,9 +125,14 @@ productName.textContent=item.name
 let oldPriceEl=document.createElement('span')
 oldPriceEl.textContent=`£${item.price}`
 
+
 let currentPriceEl=document.createElement('span')
 currentPriceEl.className='span-discount'
-currentPriceEl.textContent=`£${item.discountedPrice}`
+if(item.discountedPrice===undefined){
+    currentPriceEl.textContent=''
+}
+else { 
+currentPriceEl.textContent=`£${item.discountedPrice}`}
 
 
 productEl.append(productImgEl, productName, oldPriceEl, currentPriceEl)
