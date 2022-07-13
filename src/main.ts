@@ -71,4 +71,46 @@ function renderHeader(){
  headerEl.append( leftHeaderEl, rightHeaderEl)
 }
 
+function renderMain(){
+    let mainEl=document.querySelector('main')
+    if (mainEl === null) return
+    mainEl.textContent=''
+    
+//    <h3 class="main-title">Home</h3>
+//      <div class="products">
+//        <div>
+//          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+//          <h4>Name of product</h4>
+//          <span>Old price</span>
+//          <span>Current Price</span>
+//        </div>
+//      </div>
+
+let mainTitleEl=document.createElement('h3')
+mainTitleEl.textContent='Home'
+
+let productDisplayEL=document.createElement('div')
+productDisplayEL.className='products'
+
+// for loop here?
+
+let productEl=document.createElement('div')
+let productImgEl=document.createElement('img')
+productImgEl.src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png'
+
+let productName=document.createElement('h4')
+productName.textContent='Name of product'
+
+let oldPriceEl=document.createElement('span')
+oldPriceEl.textContent='Old price'
+
+let currentPriceEl=document.createElement('span')
+currentPriceEl.textContent='Current Price'
+
+productEl.append(productImgEl, productName, oldPriceEl, currentPriceEl)
+productDisplayEL.append(productEl)
+mainEl.append(mainTitleEl, productDisplayEL)
+}
+
 renderHeader()
+renderMain()
