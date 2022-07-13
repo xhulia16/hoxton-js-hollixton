@@ -50,3 +50,7 @@ display: grid;
 grid-template-columns: repeat(4, 1fr);
 padding:20px;
 }
+
+span{
+padding:10px;
+}

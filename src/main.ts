@@ -1,8 +1,31 @@
 import './style.css'
+type Item={
+id: number, 
+type: string,
+name: string,
+image: string,
+price: number,
+discountedPrice: number,
+dateEntered: string,
+stock: number
+}
+type State={
+items: Item[]
+}
+let state: State={
+    items:[]
+}
 
-let state={}
+function getStoreItems(){
+fetch('http://localhost:3005/store')
+.then(resp => resp.json())
+.then(dataFromServer =>{
+    state.items=dataFromServer
+    renderMain()
+})
+}
 
-
+console.log(state)
 
 function renderHeader(){
  //   <div class="left-header">
@@ -90,29 +113,29 @@ mainTitleEl.textContent='Home'
 let productDisplayEL=document.createElement('div')
 productDisplayEL.className='products'
 
-// for loop here?
+for(let item of state.items){
 
 let productEl=document.createElement('div')
 let productImgEl=document.createElement('img')
-productImgEl.src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png'
-
+productImgEl.src=item.image
 let productName=document.createElement('h4')
-productName.textContent='Name of product'
+productName.textContent=item.name
 
 let oldPriceEl=document.createElement('span')
-oldPriceEl.textContent='Old price'
+oldPriceEl.textContent=`£${item.price}`
 
 let currentPriceEl=document.createElement('span')
-currentPriceEl.textContent='Current Price'
+currentPriceEl.textContent='£ Current Price'
 
 productEl.append(productImgEl, productName, oldPriceEl, currentPriceEl)
 productDisplayEL.append(productEl)
 mainEl.append(mainTitleEl, productDisplayEL)
 }
-
+}
 function render(){
     renderHeader()
     renderMain()
 }
 
 render()
+getStoreItems()
